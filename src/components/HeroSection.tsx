@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import { motion } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
 import MagneticButton from "./MagneticButton";
 import Spinner from "./Spinner";
+
+const HeroCube = lazy(() => import("./HeroCube"));
 
 const HeroSection = () => {
   const [email, setEmail] = useState("");
@@ -21,7 +23,12 @@ const HeroSection = () => {
 
   return (
     <section className="relative z-10 min-h-screen flex items-center justify-center px-6 pt-20">
-      <div className="max-w-4xl mx-auto text-center">
+      {/* 3D Hero Cube behind content */}
+      <Suspense fallback={null}>
+        <HeroCube />
+      </Suspense>
+
+      <div className="max-w-4xl mx-auto text-center relative z-10">
         <ScrollReveal>
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
@@ -39,7 +46,7 @@ const HeroSection = () => {
           <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight mb-6">
             Stop applying.
             <br />
-            <span className="text-gradient-gold">Start getting found.</span>
+            <span className="text-gradient-gold shimmer-heading">Start getting found.</span>
           </h1>
         </ScrollReveal>
 
@@ -76,7 +83,7 @@ const HeroSection = () => {
                 required
                 className="w-full sm:flex-1 px-5 py-4 rounded-xl bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-sm transition-all"
               />
-              <MagneticButton type="submit" variant="primary" className="w-full sm:w-auto whitespace-nowrap">
+              <MagneticButton type="submit" variant="primary" className="w-full sm:w-auto whitespace-nowrap cta-glow">
                 Get Early Access
               </MagneticButton>
             </form>
