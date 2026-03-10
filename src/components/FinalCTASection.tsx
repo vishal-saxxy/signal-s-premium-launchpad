@@ -1,3 +1,4 @@
+// src/components/FinalCTASection.tsx
 import { useState } from "react";
 import ScrollReveal from "./ScrollReveal";
 import MagneticButton from "./MagneticButton";
@@ -21,7 +22,9 @@ const FinalCTASection = () => {
 
     setLoading(false);
 
-    if (result.success) {
+    if (result.duplicate) {
+      setError("You're already on the waitlist! We'll be in touch soon.");
+    } else if (result.success) {
       setSubmitted(true);
       setEmail("");
     } else {

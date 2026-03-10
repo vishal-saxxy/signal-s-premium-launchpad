@@ -1,3 +1,4 @@
+// src/components/HeroSection.tsx
 import { useState, lazy, Suspense } from "react";
 import { motion } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
@@ -23,7 +24,9 @@ const HeroSection = () => {
 
     setLoading(false);
 
-    if (result.success) {
+    if (result.duplicate) {
+      setError("You're already on the waitlist! We'll be in touch soon.");
+    } else if (result.success) {
       setSubmitted(true);
       setEmail("");
     } else {
