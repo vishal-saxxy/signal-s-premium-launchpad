@@ -3,20 +3,30 @@ import ScrollReveal from "./ScrollReveal";
 import MagneticButton from "./MagneticButton";
 import Spinner from "./Spinner";
 import { motion } from "framer-motion";
+import { saveEmail } from "@/lib/emailService";
 
 const FinalCTASection = () => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1500));
+    setError("");
+
+    const result = await saveEmail(email, "cta");
+
     setLoading(false);
-    setSubmitted(true);
-    setEmail("");
+
+    if (result.success) {
+      setSubmitted(true);
+      setEmail("");
+    } else {
+      setError("Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -49,19 +59,22 @@ const FinalCTASection = () => {
               <Spinner />
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-center gap-3 max-w-md mx-auto">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-                required
-                className="w-full sm:flex-1 px-5 py-4 rounded-xl bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-sm transition-all"
-              />
-              <MagneticButton type="submit" variant="primary" className="w-full sm:w-auto whitespace-nowrap">
-                Get Early Access
-              </MagneticButton>
-            </form>
+            <div>
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-center gap-3 max-w-md mx-auto">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  required
+                  className="w-full sm:flex-1 px-5 py-4 rounded-xl bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-sm transition-all"
+                />
+                <MagneticButton type="submit" variant="primary" className="w-full sm:w-auto whitespace-nowrap">
+                  Get Early Access
+                </MagneticButton>
+              </form>
+              {error && <p className="mt-3 text-sm text-destructive">{error}</p>}
+            </div>
           )}
         </ScrollReveal>
 
