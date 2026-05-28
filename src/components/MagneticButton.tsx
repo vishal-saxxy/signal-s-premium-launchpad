@@ -31,15 +31,15 @@ const MagneticButton = ({
 
   const handleMouseLeave = () => setPosition({ x: 0, y: 0 });
 
-  const baseStyles = "relative font-display font-semibold text-sm tracking-wide px-8 py-4 rounded-xl transition-all duration-300 overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed";
+  const baseStyles = "relative font-medium text-sm tracking-tight px-7 py-3 rounded-full transition-colors duration-300 overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed";
 
   const variantStyles = {
     primary:
-      "bg-primary text-primary-foreground hover:shadow-[0_0_30px_hsl(39_60%_55%/0.4)] active:scale-[0.97]",
+      "bg-white text-black hover:bg-white/90 active:scale-[0.97]",
     outline:
-      "bg-transparent border border-primary/30 text-primary hover:border-primary/60 hover:bg-primary/5 active:scale-[0.97]",
+      "liquid-glass text-white hover:bg-white/5 active:scale-[0.97]",
     ghost:
-      "bg-transparent text-muted-foreground hover:text-foreground hover:bg-foreground/5 active:scale-[0.97]",
+      "bg-transparent text-white/70 hover:text-white hover:bg-white/5 active:scale-[0.97]",
   };
 
   return (
