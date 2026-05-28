@@ -89,11 +89,13 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Geist', 'Inter', system-ui, sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    font-family: 'Geist', 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.02em;
   }
 
   ::selection {
@@ -104,11 +106,28 @@
 
 @layer components {
   .glass-card {
-    @apply relative rounded-2xl;
-    background: hsl(var(--glass));
-    border: 1px solid hsl(var(--glass-border));
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.01);
+    background-blend-mode: luminosity;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: none;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.4px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.15) 20%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,0.15) 80%, rgba(255,255,255,0.45) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
   }
 
   .glass-card-hover {
@@ -116,11 +135,10 @@
   }
 
   .glass-card-hover:hover {
-    background: hsl(var(--glass-hover));
-    border-color: hsl(0 0% 100% / 0.15);
-    box-shadow: 0 20px 60px -15px hsl(var(--glow-gold));
+    background: rgba(255, 255, 255, 0.03);
     transform: translateY(-2px);
   }
+
 
   .text-gradient-gold {
     @apply bg-clip-text text-transparent;
@@ -243,15 +261,6 @@
     opacity: 1;
   }
 
-  /* Breathing glow for CTAs */
-  @keyframes breathing-glow {
-    0%, 100% { box-shadow: 0 0 20px hsl(39 60% 55% / 0.1); }
-    50% { box-shadow: 0 0 40px hsl(39 60% 55% / 0.25); }
-  }
-
-  .glass-card-hover {
-    animation: breathing-glow 4s ease-in-out infinite;
-  }
 }
 
 html {
