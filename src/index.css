@@ -261,15 +261,6 @@
     opacity: 1;
   }
 
-  /* Breathing glow for CTAs */
-  @keyframes breathing-glow {
-    0%, 100% { box-shadow: 0 0 20px hsl(39 60% 55% / 0.1); }
-    50% { box-shadow: 0 0 40px hsl(39 60% 55% / 0.25); }
-  }
-
-  .glass-card-hover {
-    animation: breathing-glow 4s ease-in-out infinite;
-  }
 }
 
 html {
