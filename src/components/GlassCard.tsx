@@ -25,17 +25,9 @@ const GlassCard = ({ children, className = "", hover = true }: GlassCardProps) =
       onMouseMove={handleMouseMove}
       className={`${hover ? "glass-card-hover" : "glass-card"} ${className}`}
       style={hover ? {
-        background: `radial-gradient(300px circle at ${lightPos.x}% ${lightPos.y}%, hsl(39 40% 62% / 0.06), hsl(0 0% 100% / 0.06) 60%)`,
+        background: `radial-gradient(400px circle at ${lightPos.x}% ${lightPos.y}%, rgba(255,255,255,0.04), rgba(255,255,255,0.01) 60%)`,
       } : undefined}
     >
-      {hover && (
-        <div
-          className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-          style={{
-            background: `radial-gradient(200px circle at ${lightPos.x}% ${lightPos.y}%, hsl(39 40% 62% / 0.08), transparent 70%)`,
-          }}
-        />
-      )}
       {children}
     </div>
   );
