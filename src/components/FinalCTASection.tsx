@@ -70,7 +70,7 @@ const FinalCTASection = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
                   required
-                  className="w-full sm:flex-1 px-5 py-4 rounded-xl bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 text-sm transition-all"
+                  className="liquid-glass w-full sm:flex-1 px-5 py-4 rounded-full text-white placeholder:text-white/50 focus:outline-none text-sm"
                 />
                 <MagneticButton type="submit" variant="primary" className="w-full sm:w-auto whitespace-nowrap">
                   Get Early Access
