@@ -148,11 +148,12 @@ const LiveDemoSection = () => {
 
 
         {/* ── Row 1: Ticker + Chart ─────────────────────────────────── */}
-        <div className="grid lg:grid-cols-2 gap-6 mb-6">
+        <div className="grid lg:grid-cols-2 gap-5 sm:gap-6 mb-5 sm:mb-6">
 
           {/* Live Funding Ticker */}
           <ScrollReveal direction="left">
-            <GlassCard className="p-6 h-full" hover={false}>
+            <GlassCard className="p-5 sm:p-6 h-full" hover={false}>
+
               <div className="flex items-center justify-between mb-5">
                 <div className="flex items-center gap-2">
                   <LiveDot />
@@ -220,7 +221,7 @@ const LiveDemoSection = () => {
 
           {/* Funding by Sector Chart */}
           <ScrollReveal direction="right">
-            <GlassCard className="p-6 h-full" hover={false}>
+            <GlassCard className="p-5 sm:p-6 h-full" hover={false}>
               <div className="flex items-center justify-between mb-5">
                 <span className="text-xs font-semibold text-white/60 uppercase tracking-wider">
                   Funding by Sector
@@ -260,7 +261,7 @@ const LiveDemoSection = () => {
 
         {/* ── Row 2: Blurred Contact Cards ─────────────────────────── */}
         <ScrollReveal delay={0.1}>
-          <GlassCard hover={false} className="p-6">
+          <GlassCard hover={false} className="p-5 sm:p-6">
             <div className="flex items-center justify-between mb-5">
               <div>
                 <div className="flex items-center gap-2 mb-1">
@@ -277,7 +278,7 @@ const LiveDemoSection = () => {
               </div>
             </div>
 
-            <div className="grid sm:grid-cols-3 gap-4">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {MOCK_CONTACTS.map((contact, i) => (
                 <motion.div
                   key={i}

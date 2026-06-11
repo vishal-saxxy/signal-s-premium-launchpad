@@ -12,17 +12,17 @@ const companies = [
 
 const DatabaseSection = () => {
   return (
-    <section id="intelligence" className="relative z-10 py-24 sm:py-32 px-6">
+    <section id="intelligence" className="relative z-10 py-16 sm:py-24 lg:py-32 px-5 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal>
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 sm:mb-16">
             <p className="text-xs font-semibold text-primary tracking-widest uppercase mb-4">
               Intelligence Database
             </p>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+            <h2 className="font-display text-[28px] leading-tight sm:text-4xl lg:text-5xl font-bold mb-4">
               The startup <span className="text-gradient-gold">intelligence layer</span>
             </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">
+            <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
               Real-time data on thousands of funded startups — their growth stage, team velocity, and hiring probability.
             </p>
           </div>
@@ -31,14 +31,14 @@ const DatabaseSection = () => {
         <ScrollReveal delay={0.15}>
           <GlassCard className="overflow-hidden" hover={false}>
             <div className="overflow-x-auto">
-              <table className="w-full text-sm">
+              <table className="w-full text-xs sm:text-sm">
                 <thead>
                   <tr className="border-b border-border/50">
-                    <th className="text-left py-4 px-6 text-xs font-semibold text-muted-foreground uppercase tracking-wider">Company</th>
-                    <th className="text-left py-4 px-6 text-xs font-semibold text-muted-foreground uppercase tracking-wider">Stage</th>
-                    <th className="text-left py-4 px-6 text-xs font-semibold text-muted-foreground uppercase tracking-wider">Raised</th>
-                    <th className="text-left py-4 px-6 text-xs font-semibold text-muted-foreground uppercase tracking-wider">Hiring</th>
-                    <th className="text-left py-4 px-6 text-xs font-semibold text-muted-foreground uppercase tracking-wider">Signal</th>
+                    <th className="text-left py-3 sm:py-4 px-3 sm:px-6 text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider">Company</th>
+                    <th className="hidden sm:table-cell text-left py-3 sm:py-4 px-3 sm:px-6 text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider">Stage</th>
+                    <th className="text-left py-3 sm:py-4 px-3 sm:px-6 text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider">Raised</th>
+                    <th className="hidden md:table-cell text-left py-3 sm:py-4 px-3 sm:px-6 text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider">Hiring</th>
+                    <th className="text-left py-3 sm:py-4 px-3 sm:px-6 text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider">Signal</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -51,12 +51,15 @@ const DatabaseSection = () => {
                       viewport={{ once: true }}
                       className="border-b border-border/30 hover:bg-foreground/[0.02] transition-colors"
                     >
-                      <td className="py-4 px-6 font-medium text-foreground">{c.name}</td>
-                      <td className="py-4 px-6 text-muted-foreground">{c.stage}</td>
-                      <td className="py-4 px-6 text-primary font-medium">{c.raised}</td>
-                      <td className="py-4 px-6 text-foreground/80">{c.hiring}</td>
-                      <td className="py-4 px-6">
-                        <span className={`inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full ${
+                      <td className="py-3 sm:py-4 px-3 sm:px-6 font-medium text-foreground">
+                        {c.name}
+                        <div className="sm:hidden text-[10px] text-muted-foreground font-normal mt-0.5">{c.stage} · {c.hiring}</div>
+                      </td>
+                      <td className="hidden sm:table-cell py-3 sm:py-4 px-3 sm:px-6 text-muted-foreground">{c.stage}</td>
+                      <td className="py-3 sm:py-4 px-3 sm:px-6 text-primary font-medium whitespace-nowrap">{c.raised}</td>
+                      <td className="hidden md:table-cell py-3 sm:py-4 px-3 sm:px-6 text-foreground/80">{c.hiring}</td>
+                      <td className="py-3 sm:py-4 px-3 sm:px-6">
+                        <span className={`inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-medium px-2 sm:px-2.5 py-1 rounded-full whitespace-nowrap ${
                           c.signal === "Very Strong"
                             ? "bg-primary/15 text-primary"
                             : c.signal === "Strong"
@@ -74,6 +77,7 @@ const DatabaseSection = () => {
             </div>
           </GlassCard>
         </ScrollReveal>
+
       </div>
     </section>
   );
