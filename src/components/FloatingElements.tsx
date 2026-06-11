@@ -49,8 +49,8 @@ const GlowParticle = ({ position }: { position: [number, number, number] }) => {
   });
   return (
     <mesh ref={ref} position={position}>
-      <sphereGeometry args={[0.04, 8, 8]} />
-      <meshStandardMaterial color="#C5AE79" emissive="#C5AE79" emissiveIntensity={2} transparent opacity={0.6} />
+      <sphereGeometry args={[0.03, 8, 8]} />
+      <meshStandardMaterial color="#C5AE79" emissive="#C5AE79" emissiveIntensity={1} transparent opacity={0.25} />
     </mesh>
   );
 };
