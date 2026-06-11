@@ -3,22 +3,23 @@ import GlassCard from "./GlassCard";
 
 const PersonalizationSection = () => {
   return (
-    <section className="relative z-10 py-24 sm:py-32 px-6">
+    <section className="relative z-10 py-16 sm:py-24 lg:py-32 px-5 sm:px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           <ScrollReveal>
             <div>
               <p className="text-xs font-semibold text-primary tracking-widest uppercase mb-4">
                 Personalization Engine
               </p>
-              <h2 className="font-display text-3xl sm:text-4xl font-bold mb-6">
+              <h2 className="font-display text-[28px] leading-tight sm:text-4xl font-bold mb-6">
                 Every message is <span className="text-gradient-gold">uniquely crafted</span>
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-6">
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6">
                 Signal doesn't send templates. It researches each company — their funding,
                 product, team dynamics, and hiring patterns — to generate outreach that feels
                 genuinely personal and relevant.
               </p>
+
               <ul className="space-y-3">
                 {[
                   "References specific company milestones",

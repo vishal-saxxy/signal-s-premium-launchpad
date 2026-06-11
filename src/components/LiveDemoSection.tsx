@@ -123,28 +123,29 @@ const LiveDemoSection = () => {
   const current = TICKER_ITEMS[tickerIndex];
 
   return (
-    <section id="live-demo" className="relative z-10 py-24 sm:py-32 px-6">
+    <section id="live-demo" className="relative z-10 py-16 sm:py-24 lg:py-32 px-5 sm:px-6">
       <div className="max-w-6xl mx-auto">
 
         {/* Section header */}
         <ScrollReveal>
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 sm:mb-16">
             <div className="inline-flex items-center gap-2 mb-4">
               <LiveDot />
               <span className="text-xs font-semibold text-emerald-400 tracking-widest uppercase">
                 Live Intelligence
               </span>
             </div>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+            <h2 className="font-display text-[28px] leading-tight sm:text-4xl lg:text-5xl font-bold mb-4">
               This is what Signal{" "}
               <span className="text-gradient-gold">shows you every day</span>
             </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">
+            <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
               Real funding events, real hiring signals, real contacts — delivered
               before the job post goes up.
             </p>
           </div>
         </ScrollReveal>
+
 
         {/* ── Row 1: Ticker + Chart ─────────────────────────────────── */}
         <div className="grid lg:grid-cols-2 gap-6 mb-6">
