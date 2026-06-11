@@ -117,8 +117,7 @@ const LiveDemoSection = () => {
   }, []);
 
   const handleUnlock = (index: number) => {
-    // Scroll to CTA instead of actually unlocking
-    document.getElementById("final-cta")?.scrollIntoView({ behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const current = TICKER_ITEMS[tickerIndex];
