@@ -26,14 +26,14 @@ const Index = () => {
       <main>
         <HeroSection />
         <FundingSignalSection />
+        <LiveDemoSection />
         <ComparisonSection />
         <WorkflowSection />
-        <LiveDemoSection />
         <PersonalizationSection />
         <DatabaseSection />
         <HiringSignalsSection />
-        <JobBoardCritiqueSection />
         <FinalCTASection />
+        <JobBoardCritiqueSection />
       </main>
       <Footer />
     </div>
