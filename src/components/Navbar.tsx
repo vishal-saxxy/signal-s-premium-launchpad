@@ -43,7 +43,7 @@ const Navbar = () => {
           Log in
         </button>
         <button
-          onClick={() => document.getElementById("cta")?.scrollIntoView({ behavior: "smooth" })}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="bg-white text-black text-sm font-medium px-4 py-2.5 rounded-full hover:bg-white/90 transition-colors"
         >
           Get Early Access
@@ -79,7 +79,13 @@ const Navbar = () => {
             <button className="flex-1 liquid-glass text-white text-sm font-medium px-4 py-2.5 rounded-full">
               Log in
             </button>
-            <button className="flex-1 bg-white text-black text-sm font-medium px-4 py-2.5 rounded-full">
+            <button
+              onClick={() => {
+                setMenuOpen(false);
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className="flex-1 bg-white text-black text-sm font-medium px-4 py-2.5 rounded-full"
+            >
               Get Early Access
             </button>
           </div>

@@ -49,8 +49,8 @@ const GlowParticle = ({ position }: { position: [number, number, number] }) => {
   });
   return (
     <mesh ref={ref} position={position}>
-      <sphereGeometry args={[0.04, 8, 8]} />
-      <meshStandardMaterial color="#C5AE79" emissive="#C5AE79" emissiveIntensity={2} transparent opacity={0.6} />
+      <sphereGeometry args={[0.03, 8, 8]} />
+      <meshStandardMaterial color="#C5AE79" emissive="#C5AE79" emissiveIntensity={1} transparent opacity={0.25} />
     </mesh>
   );
 };
@@ -67,28 +67,26 @@ const CursorReactiveGroup = ({ children }: { children: React.ReactNode }) => {
   return <group ref={groupRef}>{children}</group>;
 };
 
-const particles = Array.from({ length: 20 }, (_, i) => [
-  (Math.random() - 0.5) * 12,
-  (Math.random() - 0.5) * 8,
-  (Math.random() - 0.5) * 4 - 2,
+const particles = Array.from({ length: 6 }, () => [
+  (Math.random() - 0.5) * 14,
+  (Math.random() - 0.5) * 9,
+  (Math.random() - 0.5) * 3 - 6,
 ] as [number, number, number]);
 
 const FloatingElements = () => {
   return (
-    <div className="fixed inset-0 pointer-events-none z-[1]" aria-hidden>
+    <div className="fixed inset-0 pointer-events-none z-0 opacity-40" aria-hidden>
       <Canvas
         camera={{ position: [0, 0, 8], fov: 50 }}
         gl={{ antialias: false, alpha: true }}
         dpr={[1, 1.5]}
         style={{ pointerEvents: "none" }}
       >
-        <ambientLight intensity={0.2} />
-        <pointLight position={[0, 0, 5]} intensity={0.4} color="#C5AE79" />
+        <ambientLight intensity={0.15} />
+        <pointLight position={[0, 0, 5]} intensity={0.25} color="#C5AE79" />
         <CursorReactiveGroup>
-          <HolographicRing position={[-4, 2, -3]} scale={0.6} />
-          <HolographicRing position={[5, -1, -4]} scale={0.4} />
-          <WireframeSphere position={[4, 3, -5]} scale={0.5} />
-          <WireframeSphere position={[-3, -2, -4]} scale={0.7} />
+          <HolographicRing position={[-5, 2.5, -7]} scale={0.5} />
+          <WireframeSphere position={[5, -2, -8]} scale={0.6} />
           {particles.map((pos, i) => (
             <GlowParticle key={i} position={pos} />
           ))}

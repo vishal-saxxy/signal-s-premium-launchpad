@@ -117,8 +117,7 @@ const LiveDemoSection = () => {
   }, []);
 
   const handleUnlock = (index: number) => {
-    // Scroll to CTA instead of actually unlocking
-    document.getElementById("final-cta")?.scrollIntoView({ behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const current = TICKER_ITEMS[tickerIndex];
@@ -379,9 +378,7 @@ const LiveDemoSection = () => {
                 <span className="text-white/80 font-medium">47 more contacts</span> matched today — unlock with early access
               </p>
               <button
-                onClick={() =>
-                  document.getElementById("final-cta")?.scrollIntoView({ behavior: "smooth" })
-                }
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 className="bg-white text-black text-sm font-medium px-6 py-2.5 rounded-full hover:bg-white/90 transition-colors shrink-0"
               >
                 Get Early Access →

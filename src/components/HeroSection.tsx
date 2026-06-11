@@ -34,7 +34,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative w-full h-screen overflow-hidden">
+    <section id="hero" className="relative w-full h-screen overflow-hidden">
       {/* Background video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
