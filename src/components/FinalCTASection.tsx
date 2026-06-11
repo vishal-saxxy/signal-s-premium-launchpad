@@ -33,17 +33,18 @@ const FinalCTASection = () => {
   };
 
   return (
-    <section id="cta" className="relative z-10 py-24 sm:py-32 px-6">
+    <section id="cta" className="relative z-10 py-16 sm:py-24 lg:py-32 px-5 sm:px-6">
       <div className="max-w-3xl mx-auto text-center">
         <ScrollReveal>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="font-display text-[28px] leading-tight sm:text-4xl lg:text-5xl font-bold mb-6">
             Ready to get <span className="text-gradient-gold">discovered</span>?
           </h2>
-          <p className="text-muted-foreground text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-lg text-muted-foreground mb-8 sm:mb-10 max-w-xl mx-auto leading-relaxed">
             Join thousands of professionals who stopped chasing job posts and started getting
             found by companies that actually need them.
           </p>
         </ScrollReveal>
+
 
         <ScrollReveal delay={0.15}>
           {submitted ? (

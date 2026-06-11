@@ -26,21 +26,22 @@ const steps = [
 
 const WorkflowSection = () => {
   return (
-    <section id="features" className="relative z-10 py-24 sm:py-32 px-6">
+    <section id="features" className="relative z-10 py-16 sm:py-24 lg:py-32 px-5 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal>
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 sm:mb-16">
             <p className="text-xs font-semibold text-primary tracking-widest uppercase mb-4">
               Workflow
             </p>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+            <h2 className="font-display text-[28px] leading-tight sm:text-4xl lg:text-5xl font-bold mb-4">
               How <span className="text-gradient-gold">Signal</span> Works
             </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">
+            <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
               From detection to connection in four steps. No noise, no guesswork.
             </p>
           </div>
         </ScrollReveal>
+
 
         <div className="relative">
           {/* Connecting line */}
@@ -52,7 +53,7 @@ const WorkflowSection = () => {
                 <motion.div
                   whileHover={{ y: -4 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className={`glass-card p-8 relative ${i % 2 === 1 ? "md:mt-16" : ""}`}
+                  className={`glass-card p-6 sm:p-8 relative ${i % 2 === 1 ? "md:mt-16" : ""}`}
                 >
                   <span className="font-display text-4xl font-bold text-primary/20">{step.step}</span>
                   <h3 className="font-display text-xl font-semibold text-foreground mt-2 mb-3">
