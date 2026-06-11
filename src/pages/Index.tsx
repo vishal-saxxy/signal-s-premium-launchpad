@@ -28,6 +28,7 @@ const Index = () => {
         <FundingSignalSection />
         <ComparisonSection />
         <WorkflowSection />
+        <LiveDemoSection />
         <PersonalizationSection />
         <DatabaseSection />
         <HiringSignalsSection />
