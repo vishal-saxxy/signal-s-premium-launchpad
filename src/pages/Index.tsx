@@ -5,6 +5,7 @@ import HeroSection from "@/components/HeroSection";
 import FundingSignalSection from "@/components/FundingSignalSection";
 import ComparisonSection from "@/components/ComparisonSection";
 import WorkflowSection from "@/components/WorkflowSection";
+import LiveDemoSection from "@/components/LiveDemoSection";
 import PersonalizationSection from "@/components/PersonalizationSection";
 import DatabaseSection from "@/components/DatabaseSection";
 import HiringSignalsSection from "@/components/HiringSignalsSection";
